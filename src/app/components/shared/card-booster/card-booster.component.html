@@ -1,9 +1,0 @@
-@for (card of listBoosters[0]; track card) {
-<div class="card-colection">
-  <app-card [backgroundColor]="bgCard">
-    <h3>{{ card.name }}</h3>
-    <h4 class="mt-3">{{ card.block || "Campo não encontrado..." }}</h4>
-    <h5 class="mt-3">{{ card.releaseDate }}</h5>
-  </app-card>
-</div>
-}

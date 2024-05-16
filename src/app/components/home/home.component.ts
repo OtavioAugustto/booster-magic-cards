@@ -10,8 +10,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { SetsModel } from '../../core/models/BoostersModel';
-import { CardBoosterComponent } from '../shared/card-booster/card-booster.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +20,6 @@ import { CardBoosterComponent } from '../shared/card-booster/card-booster.compon
     TitleComponent,
     FormsModule,
     ReactiveFormsModule,
-    CardBoosterComponent,
     CardComponent,
   ],
   templateUrl: './home.component.html',
@@ -49,7 +47,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private magicCardsService: MagicCardsService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.searchFormGroup = this._formBuilder.group({
       name: [''],
@@ -79,7 +78,7 @@ export class HomeComponent implements OnInit {
       console.log('BOOSTERS', res);
       var resp = Object.keys(res).map((key) => res[key]);
       this.listBoosters = resp;
-      console.log('8=================D', this.listBoosters);
+      this.router.navigate(['cards'], { state: this.listBoosters });
     });
   }
 }

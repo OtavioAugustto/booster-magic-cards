@@ -25,4 +25,7 @@ export class BoostersItemsModel {
   type: string = '';
   types: string[] = [];
   subtypes: string[] = [];
+  colorIdentity: string[] = [];
+  text: string = '';
+  imageUrl: string = '';
 }
