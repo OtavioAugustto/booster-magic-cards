@@ -1,0 +1,11 @@
+.footer-black {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: var(--on-bg-home);
+  color: var(--white);
+  a {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+}

@@ -12,9 +12,9 @@
         <div class="img-card mt-2">
           <img [src]="card.imageUrl || imgDefault" />
         </div>
-        <h6 class="mt-3">{{ card.manaCost }}</h6>
-        <h6 class="mt-3">{{ card.colorIdentity }}</h6>
-        <h6 class="mt-3">{{ card.text }}</h6>
+        <h6 class="mt-3">{{ card.manaCost || "---------" }}</h6>
+        <h6 class="mt-3">{{ card.colorIdentity || "---------" }}</h6>
+        <h6 class="mt-3">{{ card.text || "---------" }}</h6>
       </app-card>
     </div>
     }
