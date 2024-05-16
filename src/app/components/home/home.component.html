@@ -38,7 +38,7 @@
           [buttonText]="textBtn"
           [buttonBgColor]="colorBtn"
           (click)="
-            getBoosters(
+            getSets(
               searchFormGroup.controls['name'].value,
               searchFormGroup.controls['block'].value
             )
@@ -64,6 +64,12 @@
       </app-card>
     </div>
     }
+  </div>
+  <!-- LINHA TESTE -->
+  <div class="row">
+    <div class="col-4">
+      <app-card-booster [listBoosters]="listBoosters"></app-card-booster>
+    </div>
   </div>
   }
 </div>

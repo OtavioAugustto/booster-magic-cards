@@ -16,6 +16,8 @@ export class MagicCardsService {
   }
 
   getBoostersById(id: string) {
-    return this.htttpClient.get<BoostersModel>(this.api + `sets/${id}/booster`);
+    return this.htttpClient.get<BoostersModel[]>(
+      this.api + `sets/${id}/booster`
+    );
   }
 }

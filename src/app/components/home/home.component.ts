@@ -11,16 +11,18 @@ import {
   Validators,
 } from '@angular/forms';
 import { SetsModel } from '../../core/models/BoostersModel';
+import { CardBoosterComponent } from '../shared/card-booster/card-booster.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    CardComponent,
     DynamicBtnComponent,
     TitleComponent,
     FormsModule,
     ReactiveFormsModule,
+    CardBoosterComponent,
+    CardComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -41,6 +43,7 @@ export class HomeComponent implements OnInit {
     { value: 'ONSIUAUGHT' },
   ];
   listSets: any[] = [];
+  listBoosters: any[] = [];
   showListSets = false;
   searchFormGroup: FormGroup;
 
@@ -56,7 +59,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getBoosters(name: string, block: string) {
+  getSets(name: string, block: string) {
     if (this.searchFormGroup.controls['block'].valid) {
       const concatName = name + '|' + block;
       alert(concatName);
@@ -72,8 +75,11 @@ export class HomeComponent implements OnInit {
     }
   }
   getBoostersById(id: string) {
-    this.magicCardsService.getBoostersById(id).subscribe((res) => {
+    this.magicCardsService.getBoostersById(id).subscribe((res: any) => {
       console.log('BOOSTERS', res);
+      var resp = Object.keys(res).map((key) => res[key]);
+      this.listBoosters = resp;
+      console.log('8=================D', this.listBoosters);
     });
   }
 }
