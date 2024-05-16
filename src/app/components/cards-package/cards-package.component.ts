@@ -22,6 +22,6 @@ export class CardsPackageComponent implements OnInit {
     );
   }
   ngOnInit(): void {
-    console.log('XEROLAAA', this.listBoosters);
+    console.log('lista chegando', this.listBoosters);
   }
 }
