@@ -9,6 +9,7 @@ label {
 
 .card-colection {
   color: var(--white);
+
   h3 {
     text-align: center;
     font-family: Gotham;
@@ -20,5 +21,8 @@ label {
   }
   h5 {
     text-align: right;
+  }
+  app-card {
+    cursor: pointer;
   }
 }

@@ -10,6 +10,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { SetsModel } from '../../core/models/BoostersModel';
 
 @Component({
   selector: 'app-home',
@@ -55,11 +56,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getBoosters(name: string, bloco: string) {
+  getBoosters(name: string, block: string) {
     if (this.searchFormGroup.controls['block'].valid) {
-      const concatName = name + '|' + bloco;
+      const concatName = name + '|' + block;
       alert(concatName);
-      this.magicCardsService.getSetsByName(concatName).subscribe((res) => {
+      this.magicCardsService.getSetsByName(concatName).subscribe((res: any) => {
         console.log(res);
         var resp = Object.keys(res).map((key) => res[key]);
         this.listSets = resp;
@@ -69,8 +70,10 @@ export class HomeComponent implements OnInit {
     } else {
       alert('Preencha os campos obrigatórios!');
     }
-
-    console.log('NOME', this.searchFormGroup.controls['name'].value);
-    console.log('BLOCK', this.searchFormGroup.controls['block'].value);
+  }
+  getBoostersById(id: string) {
+    this.magicCardsService.getBoostersById(id).subscribe((res) => {
+      console.log('BOOSTERS', res);
+    });
   }
 }
