@@ -61,13 +61,10 @@ export class HomeComponent implements OnInit {
   getSets(name: string, block: string) {
     if (this.searchFormGroup.controls['block'].valid) {
       const concatName = name + '|' + block;
-      alert(concatName);
       this.magicCardsService.getSetsByName(concatName).subscribe((res: any) => {
-        console.log(res);
         var resp = Object.keys(res).map((key) => res[key]);
         this.listSets = resp;
         this.showListSets = true;
-        console.log('LISTA AQUI', this.listSets);
       });
     } else {
       alert('Preencha os campos obrigatórios!');
@@ -75,7 +72,6 @@ export class HomeComponent implements OnInit {
   }
   getBoostersById(id: string) {
     this.magicCardsService.getBoostersById(id).subscribe((res: any) => {
-      console.log('BOOSTERS', res);
       var resp = Object.keys(res).map((key) => res[key]);
       this.listBoosters = resp;
       this.router.navigate(['cards'], { state: this.listBoosters });

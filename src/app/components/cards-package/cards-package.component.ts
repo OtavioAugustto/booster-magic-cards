@@ -21,7 +21,5 @@ export class CardsPackageComponent implements OnInit {
       (key: any) => this.listBoosters[key]
     );
   }
-  ngOnInit(): void {
-    console.log('lista chegando', this.listBoosters);
-  }
+  ngOnInit(): void {}
 }
