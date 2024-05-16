@@ -1,0 +1,24 @@
+label {
+  font-family: Gotham;
+}
+.content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-colection {
+  color: var(--white);
+  h3 {
+    text-align: center;
+    font-family: Gotham;
+    font-size: 25px;
+  }
+  h4 {
+    text-align: left;
+    white-space: nowrap;
+  }
+  h5 {
+    text-align: right;
+  }
+}

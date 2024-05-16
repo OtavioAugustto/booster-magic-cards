@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-5 content-title">
+      <app-title [inputText]="principalTitle"></app-title>
+    </div>
+  </div>
+  <form [formGroup]="searchFormGroup">
+    <div class="row mt-5">
+      <div class="col-4">
+        <label for="nameColection">Nome Coleção</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Digite o nome da coleção"
+          id="nameColection"
+          formControlName="name"
+        />
+      </div>
+      <div class="col-4">
+        <label for="cardSelction">Coleção*</label>
+        <select
+          class="form-select"
+          placeholder="Selecione uma coleção"
+          id="cardSelction"
+          formControlName="block"
+          required
+        >
+          @for (nameColection of colectionNames; track nameColection) {
+          <option [value]="nameColection.value">
+            {{ nameColection.value }}
+          </option>
+          }
+        </select>
+      </div>
+
+      <div class="col-4 mt-4">
+        <app-dynamic-btn
+          [buttonText]="textBtn"
+          [buttonBgColor]="colorBtn"
+          (click)="
+            getBoosters(
+              searchFormGroup.controls['name'].value,
+              searchFormGroup.controls['block'].value
+            )
+          "
+        ></app-dynamic-btn>
+      </div>
+    </div>
+  </form>
+
+  @if (showListSets) {
+  <div class="row">
+    <div class="col-12 mt-5 content-title">
+      <app-title [inputText]="resultTitle"></app-title>
+    </div>
+  </div>
+  <div class="row">
+    @for (sets of listSets[0]; track sets) {
+    <div class="col-4 mt-5 card-colection">
+      <app-card [backgroundColor]="bgCard">
+        <h3>{{ sets.name }}</h3>
+        <h4 class="mt-3">{{ sets.block || "Campo não encontrado" }}</h4>
+        <h5 class="mt-3">{{ sets.releaseDate }}</h5>
+      </app-card>
+    </div>
+    }
+  </div>
+  }
+</div>

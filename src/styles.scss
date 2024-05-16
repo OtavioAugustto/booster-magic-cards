@@ -4,6 +4,8 @@
 @import url(./assets/vars.scss);
 
 body {
-	font-family: Roboto;
-	font-weight: 500;
+  font-family: Roboto;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--bg-home);
 }
