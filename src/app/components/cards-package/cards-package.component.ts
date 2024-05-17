@@ -2,10 +2,11 @@ import { CardComponent } from './../shared/card/card.component';
 import { Router } from '@angular/router';
 import { Component, OnInit, signal } from '@angular/core';
 import { TitleComponent } from '../shared/title/title.component';
+import { BtnScrollTopComponent } from '../shared/btn-scroll-top/btn-scroll-top.component';
 @Component({
   selector: 'app-cards-package',
   standalone: true,
-  imports: [CardComponent, TitleComponent],
+  imports: [CardComponent, TitleComponent, BtnScrollTopComponent],
   templateUrl: './cards-package.component.html',
   styleUrl: './cards-package.component.scss',
 })

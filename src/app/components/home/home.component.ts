@@ -11,6 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BtnScrollTopComponent } from '../shared/btn-scroll-top/btn-scroll-top.component';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ import { Router } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     CardComponent,
+    BtnScrollTopComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

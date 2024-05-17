@@ -1,0 +1,28 @@
+.btn-voltar-topo {
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  border: none;
+  -webkit-box-shadow: 2px 3px 5px rgba(228, 228, 228, 0.363);
+  -moz-box-shadow: 2px 3px 5px rgba(228, 228, 228, 0.363);
+  box-shadow: 2px 3px 5px rgba(228, 228, 228, 0.363);
+  float: right;
+  top: 50px;
+}
+.btn-voltar-topo a {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 700 !important;
+  font-size: 26px;
+  text-decoration: none !important;
+}
+.img-btn {
+  display: flex;
+  justify-content: center;
+}
+img {
+  width: 28px;
+  height: 28px;
+}

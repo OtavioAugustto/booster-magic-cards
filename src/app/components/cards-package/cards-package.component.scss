@@ -3,6 +3,9 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  span {
+    color: var(--dark-grey);
+  }
 }
 
 .card-colection {
@@ -35,6 +38,6 @@
   margin-bottom: 30px;
 }
 
-.spn-border {
-  color: var(--);
+.mb-btn-ajst {
+  margin-bottom: 10px;
 }
