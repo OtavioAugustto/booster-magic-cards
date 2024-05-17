@@ -7,4 +7,7 @@
     height: 60px;
     cursor: pointer;
   }
+  img:hover {
+    filter: brightness(150%);
+  }
 }

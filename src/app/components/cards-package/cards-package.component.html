@@ -2,19 +2,31 @@
   <div class="row">
     <div class="col-12 mt-5 content-title">
       <app-title [inputText]="principalTitle"></app-title>
+      <span>Para voltar á home basta clicar na logo do top bar.</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <i class="bi bi-arrow-left-circle-fill"></i>
     </div>
   </div>
   <div class="row mt-5">
     @for (card of listBoosters[0]; track card) {
-    <div class="col-4 card-colection">
+    <div class="col-4 card-colection scaled mb-ajst">
       <app-card [backgroundColor]="bgCard">
         <h5>{{ card.name }}</h5>
         <div class="img-card mt-2">
           <img [src]="card.imageUrl || imgDefault" />
         </div>
-        <h6 class="mt-3">{{ card.manaCost || "---------" }}</h6>
-        <h6 class="mt-3">{{ card.colorIdentity || "---------" }}</h6>
-        <h6 class="mt-3">{{ card.text || "---------" }}</h6>
+        <div class="row">
+          <div class="col-6 pull-left">
+            <h5 class="mt-3">{{ card.manaCost || "---------" }}</h5>
+          </div>
+          <div class="col-6 pull-right">
+            <h5 class="mt-3">{{ card.colorIdentity || "---------" }}</h5>
+          </div>
+        </div>
+        <p class="mt-3">{{ card.text || "---------" }}</p>
       </app-card>
     </div>
     }

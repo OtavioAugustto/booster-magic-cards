@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
   listBoosters: any[] = [];
   showListSets = false;
   searchFormGroup: FormGroup;
+  hiddenSpinner = false;
 
   constructor(
     private magicCardsService: MagicCardsService,
@@ -60,17 +61,21 @@ export class HomeComponent implements OnInit {
 
   getSets(name: string, block: string) {
     if (this.searchFormGroup.controls['block'].valid) {
+      this.hiddenSpinner = true;
       const concatName = name + '|' + block;
       this.magicCardsService.getSetsByName(concatName).subscribe((res: any) => {
         var resp = Object.keys(res).map((key) => res[key]);
         this.listSets = resp;
         this.showListSets = true;
+        this.hiddenSpinner = false;
       });
     } else {
       alert('Preencha os campos obrigatórios!');
     }
   }
   getBoostersById(id: string) {
+    this.hiddenSpinner = true;
+    this.showListSets = false;
     this.magicCardsService.getBoostersById(id).subscribe((res: any) => {
       var resp = Object.keys(res).map((key) => res[key]);
       this.listBoosters = resp;

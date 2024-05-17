@@ -9,3 +9,10 @@ body {
   color: var(--white);
   background-color: var(--bg-home);
 }
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}

@@ -1,7 +1,8 @@
 .content-title {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .card-colection {
@@ -13,11 +14,27 @@
     text-align: center !important;
   }
   h5 {
-    text-align: center;
+    text-align: center !important;
     font-family: Gotham;
-    font-size: 25px;
+    font-size: 18px;
   }
-  h6 {
+
+  h5 {
     text-align: center;
   }
+  p {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+.scaled:hover {
+  transform: scale(1.1);
+  color: #ee5e34;
+}
+.mb-ajst {
+  margin-bottom: 30px;
+}
+
+.spn-border {
+  color: var(--);
 }

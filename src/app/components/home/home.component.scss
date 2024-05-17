@@ -10,19 +10,35 @@ label {
 .card-colection {
   color: var(--white);
 
-  h3 {
+  h5 {
     text-align: center;
     font-family: Gotham;
-    font-size: 25px;
+    font-size: 18px;
   }
-  h4 {
+  span {
     text-align: left;
     white-space: nowrap;
   }
-  h5 {
+  p {
     text-align: right;
   }
   app-card {
     cursor: pointer;
   }
+}
+.scaled {
+  text-align: center;
+}
+.scaled:hover {
+  transform: scale(1.1);
+  color: #ee5e34;
+}
+
+.content-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.spn-border {
+  color: var(--secondary-color) !important;
 }

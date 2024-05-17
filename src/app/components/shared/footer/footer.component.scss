@@ -8,4 +8,8 @@
     text-decoration: none;
     color: var(--secondary-color);
   }
+
+  a:hover {
+    filter: brightness(150%);
+  }
 }
