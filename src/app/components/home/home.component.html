@@ -67,7 +67,7 @@
   <div class="row">
     @for (sets of listSets[0]; track sets) {
     <div class="col-4 mt-5 card-colection scaled">
-      <app-card [backgroundColor]="bgCard" (click)="getBoostersById('10E')">
+      <app-card [backgroundColor]="bgCard" (click)="getBoostersById(sets.code)">
         <h5>{{ sets.name }}</h5>
         <span class="mt-3">{{ sets.block || "Campo não encontrado" }}</span>
         <p class="mt-3">{{ sets.releaseDate }}</p>
